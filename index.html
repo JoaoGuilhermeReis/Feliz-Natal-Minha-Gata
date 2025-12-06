@@ -322,7 +322,7 @@ body{background:#0b1f0b !important; background:linear-gradient(180deg,#0b1f0b,#1
 
   const img = document.createElement('img');
   const filename = `foto ${idx + 1}.jpg`;
-  img.src = 'fotos' + encodeURIComponent(filename);
+  img.src = filename;
   img.alt = `Foto ${idx + 1}`;
   img.onerror = function () {
     this.style.opacity = .16;
@@ -546,4 +546,5 @@ window.addEventListener('DOMContentLoaded', () => {
 
 </body>
 </html>
+
 

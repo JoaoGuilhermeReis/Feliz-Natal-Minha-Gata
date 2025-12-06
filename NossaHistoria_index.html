@@ -90,7 +90,7 @@
     /* te amo section */
     .teamo{margin-top:40px;padding:40px;border-radius:12px;text-align:center;background:linear-gradient(180deg, rgba(183,28,28,0.06), rgba(46,125,50,0.02));position:relative;overflow:hidden}
     .teamo h2{font-family:Playfair Display;font-size:44px;margin:0}
-    .rose{position:absolute;top:-60px;left:0;width:36px;height:36px;background-image:url('assets/rose.png');background-size:cover;opacity:0.95}
+    .rose{position:absolute;top:-60px;left:0;width:36px;height:36px;background-image:url('rose.png');background-size:cover;opacity:0.95}
 
     /* snow */
     .snowflake{position:fixed;top:-10px;pointer-events:none;z-index:9999;filter:drop-shadow(0 4px 10px rgba(0,0,0,0.6))}
@@ -145,7 +145,7 @@ body{background:#0b1f0b !important; background:linear-gradient(180deg,#0b1f0b,#1
         <button class="btn secondary" id="skipBtn">Pular animação</button>
       </div>
       <div class="preview">
-        <div class="foto "><img id="previewImg" src="assets/couple2.jpg" alt="Nossa foto"></div>
+        <div class="foto "><img id="previewImg" src="couple2.jpg" alt="Nossa foto"></div>
       </div>
     </section>
 
@@ -168,7 +168,7 @@ body{background:#0b1f0b !important; background:linear-gradient(180deg,#0b1f0b,#1
 
       <div class="completed" id="completed" style="display:none">
         <div class="datebig" id="dateBig">06/07/2025</div>
-        <div class="couple"><img id="revealedImg" src="assets/couple2.jpg" alt="Nossa foto"></div>
+        <div class="couple"><img id="revealedImg" src="couple2.jpg" alt="Nossa foto"></div>
       </div>
     </section>
 
@@ -182,7 +182,7 @@ body{background:#0b1f0b !important; background:linear-gradient(180deg,#0b1f0b,#1
 
     <section class="player-wrap" id="playerSection">
       <div class="player-left">
-        <div class="cover"><img id="coverImg" src="assets/couple2.jpg" alt="Capa" style="width:100%;height:100%;object-fit:cover"></div>
+        <div class="cover"><img id="coverImg" src="couple2.jpg" alt="Capa" style="width:100%;height:100%;object-fit:cover"></div>
       </div>
       <div class="player-right">
         <h3 style="margin:0;font-family:Playfair Display">Nossa Playlist</h3>
@@ -194,7 +194,7 @@ body{background:#0b1f0b !important; background:linear-gradient(180deg,#0b1f0b,#1
             <div class="time-row"><div id="curTime">0:00</div><div id="durTime">0:00</div></div>
           </div>
         </div>
-        <audio id="audioPlayer" src="audio/song.mp3"></audio>
+        <audio id="audioPlayer" src="song.mp3"></audio>
       </div>
     </section>
 
@@ -208,7 +208,7 @@ body{background:#0b1f0b !important; background:linear-gradient(180deg,#0b1f0b,#1
   <script>
     /* ---------- Configurable data ---------- */
     const revealDate = {day:6, month:7, year:2025}; // 6/07/2025
-    const revealImageSrc = 'assets/couple3.jpg'; // image to reveal after roll
+    const revealImageSrc = 'couple3.jpg'; // image to reveal after roll
     const polaroidCount = 17;
     const polaroidLast = {month:12, year:2025}; // final month: December 2025
 
@@ -322,7 +322,7 @@ body{background:#0b1f0b !important; background:linear-gradient(180deg,#0b1f0b,#1
 
   const img = document.createElement('img');
   const filename = `foto ${idx + 1}.jpg`;
-  img.src = 'fotos/' + encodeURIComponent(filename);
+  img.src = 'fotos' + encodeURIComponent(filename);
   img.alt = `Foto ${idx + 1}`;
   img.onerror = function () {
     this.style.opacity = .16;
@@ -398,7 +398,7 @@ body{background:#0b1f0b !important; background:linear-gradient(180deg,#0b1f0b,#1
       const size = Math.random()*14 + 6; s.style.width = size+'px'; s.style.height = size+'px';
       s.style.left = Math.random()*100 + '%';
       s.style.opacity = (Math.random()*0.6)+0.3;
-      s.style.backgroundImage = "url('assets/snowflake.png')"; s.style.backgroundSize = 'contain';
+      s.style.backgroundImage = "url('snowflake.png')"; s.style.backgroundSize = 'contain';
       const dur = Math.random()*9000 + 6000; s.style.transition = `transform ${dur}ms linear, opacity ${dur}ms linear`;
       document.body.appendChild(s);
       requestAnimationFrame(()=>{
@@ -434,7 +434,7 @@ body{background:#0b1f0b !important; background:linear-gradient(180deg,#0b1f0b,#1
     (function prepopulate(){
       const cont = $('#polaroids');
       for(let i=0;i<polaroidCount;i++){
-        const p = document.createElement('div'); p.className='polaroid'; p.style.opacity=0.28; p.innerHTML = `<img src="fotos/foto ${i+1}.jpg" alt="Foto ${i+1}"><div class='caption'>Mês</div><div class='date-tag'>--/----</div>`;
+        const p = document.createElement('div'); p.className='polaroid'; p.style.opacity=0.28; p.innerHTML = `<img src="foto ${i+1}.jpg" alt="Foto ${i+1}"><div class='caption'>Mês</div><div class='date-tag'>--/----</div>`;
         cont.appendChild(p);
       }
     })();
@@ -511,7 +511,7 @@ function criarChuvaRosas(containerSelector){
 
   for(let i=0;i<35;i++){
     const rosa = document.createElement('img');
-    rosa.src = 'assets/coracao.png'; // rosa PNG leve
+    rosa.src = 'coracao.png'; // rosa PNG leve
     rosa.className = 'rosa-chuva';
     rosa.style.left = Math.random()*100 + 'vw';
     rosa.style.top = '-80px';
@@ -546,3 +546,4 @@ window.addEventListener('DOMContentLoaded', () => {
 
 </body>
 </html>
+
